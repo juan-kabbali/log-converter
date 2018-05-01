@@ -20,7 +20,7 @@ The command has 3 inputs
 
 > **--directory**
 >
->*to specify the directory where the logs are placed. By default, the command will search in /usr/local/ezproxy/docs/loggedin/ .You can specify relative or absolute directories*
+>*to specify the directory where the logs are placed. By default, the command will search in /usr/local/ezproxy/docs/loggedin/  You can specify relative or absolute directories*
 
 > **--format**
 >
@@ -79,14 +79,15 @@ ezp20161007.mylogformat.intelproxy
  
 This repository has a shell script called **rename.sh**, if you want, you can execute it to organize and separate between the new logs with old ones
 
-*YOU HAVE TO EXECUTE **RENAME.SH** IN THE DIRECTORY WHERE LOGS ARE PLACED, SO USE **mv** OR **cp** COMMAND AS NEEDED*
+*YOU HAVE TO EXECUTE **RENAME.SH** IN THE DIRECTORY WHERE LOGS ARE PLACED, SO USE **mv** OR **cp** COMMANDS AS NEEDED*
 ```sh
 $ cp /usr/local/ezproxy/Logconverter/rename.sh /usr/local/ezproxy/rename.sh
 ```
 
 ###### Finally, execute ./rename.sh
 ```sh
-$ pwd /usr/local/ezproxy/
+$ pwd 
+/usr/local/ezproxy/
 $ ./rename.sh
 ```
 
