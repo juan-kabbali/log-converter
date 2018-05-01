@@ -6,6 +6,11 @@
  * Time: 4:45 PM
  */
 
+/*
+ * TODO identify where lines endings have '\n' to avoid create converted logs with blank lines
+ *
+ */
+
 include "Assets/Regex.php";
 include "Assets/CommandOptions.php";
 

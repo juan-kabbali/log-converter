@@ -1,5 +1,10 @@
 #!/bin/bash
 
+## TODO create inputs to specify:
+##      - directory name where elogim logs will be move. Now, it only works creating elogimlogs directory
+##      - old logs format. Now, it only works with .log files
+##      - old logs renamed format. Now, it renames only .log to .log-elogim
+
 # CREATE ELOGIM LOGS DIRECTORY
 mkdir elogimlogs
 
