@@ -18,7 +18,7 @@ $logs_dir = '/usr/local/ezproxy/docs/loggedin/';
 $logs_format = '*.log';
 
 if (posix_getuid() != 0){
-    echo "ERROR: You must run this script as super user";
+    echo "ERROR: You must run this script as super user \n";
     exit(1);
 }
 
@@ -26,8 +26,8 @@ echo "Running LogConverter \n";
 
 if (in_array($HELP, $argv)){
     echo "Log Converter Options: \n";
-    echo "\t --directory: to specify the directory where the logs are placed. Default value: $logs_dir";
-    echo "\t --format: to specify the logs format. Default value: $logs_format";
+    echo "\t --directory: to specify the directory where the logs are placed. Default value: $logs_dir \n";
+    echo "\t --format: to specify the logs format. Default value: $logs_format \n";
     exit(0);
 }
 
@@ -54,6 +54,7 @@ foreach (glob($logs_dir.$logs_format) as $file){
     if(is_readable($file)){
         // OPEN EACH FILE
         $logs = fopen($file, "r") or die("Unable to open file");
+        echo "$file read successfully";
         // THIS VAR CONTAINS THE STRING OF EACH LOG LINE FILE
         $new_line ="";
         // WE GET EACH LINE TO REPLACE WITH REGEX MATCHS WHILE IT EXISTS
@@ -66,9 +67,10 @@ foreach (glob($logs_dir.$logs_format) as $file){
         }
 
         // CREATE THE NEW LOG FILE WITH ITS ORIGINAL NAME WITH
-        $new_log = fopen($file.".bak", "w");
+        $new_log = fopen($file.".intelproxy", "w");
         // WE WRITE IT WITH THE WHOLE CONCATENATED STRING
         fwrite($new_log, $new_line);
+        echo $file."intelproxy wrote successfully \n";
         fclose($logs);
     }
 
